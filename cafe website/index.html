@@ -9,7 +9,7 @@
       rel="stylesheet"
     />
     <title>AROMA Café</title>
-    <link rel="stylesheet" href="css\style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
@@ -51,6 +51,7 @@
           />
           <h4>Latte</h4>
           <p>Rs. 1499.99</p>
+          <button onclick="addToCart('Latte', 1499.99)">Add to Cart</button>
         </div>
 
         <div class="menu-card">
@@ -59,6 +60,7 @@
           />
           <h4>Cappuccino</h4>
           <p>Rs. 999.99</p>
+          <button onclick="addToCart('Cappuccino', 999.99)">Add to Cart</button>
         </div>
 
         <div class="menu-card">
@@ -68,6 +70,7 @@
           />
           <h4>Espresso</h4>
           <p>Rs. 1100.00</p>
+          <button onclick="addToCart('Espresso', 1100)">Add to Cart</button>
         </div>
       </div>
 
@@ -80,7 +83,8 @@
             alt="Iced Coffee"
           />
           <h4>Iced Coffee</h4>
-          <p>Rs. 480</p>
+          <p>Rs. 450</p>
+          <button onclick="addToCart('Iced Coffee', 450)">Add to Cart</button>
         </div>
 
         <div class="menu-card">
@@ -90,6 +94,7 @@
           />
           <h4>Cold Brew</h4>
           <p>Rs. 500</p>
+          <button onclick="addToCart('Cold Brew', 500)">Add to Cart</button>
         </div>
 
         <div class="menu-card">
@@ -99,6 +104,7 @@
           />
           <h4>Fresh Lime</h4>
           <p>Rs. 300</p>
+          <button onclick="addToCart('Fresh Lime', 300)">Add to Cart</button>
         </div>
       </div>
 
@@ -112,6 +118,7 @@
           />
           <h4>Chocolate Cake</h4>
           <p>Rs. 1000</p>
+          <button onclick="addToCart('Chocolate Cake', 1000)">Add to Cart</button>
         </div>
 
         <div class="menu-card">
@@ -119,8 +126,9 @@
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB-FjKgRVVVoW6JM46_eIdQUyx0cIxsbNiAA&s"
             alt="Brownie"
           />
-          <h4>Brownie </h4>
+          <h4>Brownie (Pakixtani)</h4>
           <p>Rs. 500</p>
+          <button onclick="addToCart('Brownie', 500)">Add to Cart</button>
         </div>
 
         <div class="menu-card">
@@ -128,11 +136,13 @@
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_jW-CyzRugBPJJncYfd78TvIFwJHYrr6O1A&s"
             alt="Croissant"
           />
-          <h4>Croissant </h4>
+          <h4>Croissant</h4>
           <p>Rs. 700</p>
+          <button onclick="addToCart('Croissant', 700)">Add to Cart</button>
         </div>
       </div>
     </section>
+
     <!-- ABOUT -->
     <section class="section" id="about">
       <h2>About AROMA</h2>
@@ -146,31 +156,37 @@
 
       <div class="team">
         <div class="team-member">
-          <img
-            src="https://t4.ftcdn.net/jpg/05/59/91/77/360_F_559917754_dPi14NuRWEofju2XA0Jz07kSITgjYYJm.jpg"
-            alt="Shaheer Khurram"
-          />
           <h3>Shaheer Khurram</h3>
           <p>Head Barista</p>
         </div>
         <div class="team-member">
-            <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtAWLAFBbfFj7XC4gaHF8qDutSmzk6tW8vIQ&s"
-            alt="Mechal Shahbaz"
-          />
           <h3>Mechal Shahbaz</h3>
           <p>Pastry Chef</p>
         </div>
         <div class="team-member">
-            <img
-            src="https://static.wikia.nocookie.net/disney/images/8/8e/Profile_-_Flash.jpg/revision/latest?cb=20190718052321"
-            alt="Maryam Saeed"
-          />
           <h3>Maryam Saeed</h3>
           <p>Customer Relations</p>
         </div>
       </div>
     </section>
+
+    <!-- Floating Cart Button -->
+    <button id="viewCartBtn" class="cart-btn" onclick="openCart()">Cart (<span id="cartCount">0</span>)</button>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeCart()" aria-label="Close">×</button>
+        <h2>Your Order</h2>
+        <div id="cartItems"></div>
+        <div class="cart-summary">Total: Rs. <span id="cartTotal">0</span></div>
+        <div style="margin-top:12px">
+          <button class="btn" onclick="checkout()">Checkout</button>
+          <button class="btn" onclick="clearCart()" style="background:#777;margin-left:8px">Clear</button>
+        </div>
+      </div>
+    </div>
+
 
     <!-- CONTACT -->
     <section class="section" id="contact">
@@ -191,7 +207,6 @@
       <p>© 2026 AROMA Café | AICT Lab Project</p>
     </footer>
 
-    <script src="js\script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
-
