@@ -96,9 +96,16 @@ function closeCart() {
 function checkout() {
     if (cart.length === 0) { alert('Cart is empty'); return; }
     const total = getCartTotal();
-    alert('Order placed successfully! Total amount: Rs. ' + total);
+    document.getElementById('confirmTotal').innerText = total;
+    const modal = document.getElementById('checkoutConfirm');
+    modal.setAttribute('aria-hidden', 'false');
     clearCart();
     closeCart();
+}
+
+function closeCheckoutConfirm() {
+    const modal = document.getElementById('checkoutConfirm');
+    modal.setAttribute('aria-hidden', 'true');
 }
 
 // Close modal on Escape

@@ -187,6 +187,17 @@
       </div>
     </div>
 
+    <!-- Checkout Confirmation Modal -->
+    <div id="checkoutConfirm" class="modal" aria-hidden="true">
+      <div class="modal-content" style="max-width: 400px; text-align: center;">
+        <h2 style="color: var(--primary); margin-bottom: 20px;">Order Confirmed! ✓</h2>
+        <p style="font-size: 1rem; margin: 20px 0;">Your order has been placed successfully!</p>
+        <div class="cart-summary" style="text-align: center; font-size: 1.2rem;">Total: Rs. <span id="confirmTotal">0</span></div>
+        <p style="color: var(--gray); margin: 20px 0; font-size: 0.9rem;">Thank you for your order. Your items will be ready shortly.</p>
+        <button class="btn" onclick="closeCheckoutConfirm()">Done</button>
+      </div>
+    </div>
+
 
     <!-- CONTACT -->
     <section class="section" id="contact">
